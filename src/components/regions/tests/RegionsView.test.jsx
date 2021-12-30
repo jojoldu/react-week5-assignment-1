@@ -7,10 +7,11 @@ describe('RegionsView', () => {
     jest.clearAllMocks();
   });
 
-  function renderTestComponent(regions) {
+  function renderTestComponent(regions, target) {
     return render((
       <RegionsView
         regions={regions}
+        target={target}
       />
     ));
   }
@@ -40,5 +41,18 @@ describe('RegionsView', () => {
 
     const result = getByRole('button');
     expect(result).toHaveTextContent(expectName);
+  });
+
+  it('target과 동일할 경우 지역명(V)로 노출된다', () => {
+    const expectName = '서울';
+    const target = 1;
+    const regions = [
+      { id: target, name: expectName },
+    ];
+
+    const { getByRole } = renderTestComponent(regions, target);
+
+    const result = getByRole('button');
+    expect(result).toHaveTextContent(`${expectName}(V)`);
   });
 });
