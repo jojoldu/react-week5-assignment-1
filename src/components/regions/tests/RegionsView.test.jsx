@@ -29,4 +29,17 @@ describe('RegionsView', () => {
     expect(getByText(expectName1)).toBeDefined();
     expect(getByText(expectName2)).toBeDefined();
   });
+
+  it('region은 button으로 노출된다', () => {
+    const expectName = '서울';
+    const regions = [
+      { id: 1, name: expectName },
+    ];
+
+    const { getByRole } = renderTestComponent(regions);
+
+    const result = getByRole('button');
+    expect(result.innerText).toHaveTextContent(expectName);
+
+  });
 });
