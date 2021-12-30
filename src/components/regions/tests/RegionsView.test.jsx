@@ -39,7 +39,6 @@ describe('RegionsView', () => {
     const { getByRole } = renderTestComponent(regions);
 
     const result = getByRole('button');
-    expect(result.innerText).toHaveTextContent(expectName);
-
+    expect(result).toHaveTextContent(expectName);
   });
 });

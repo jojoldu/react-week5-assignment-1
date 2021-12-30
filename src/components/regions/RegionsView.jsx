@@ -3,7 +3,9 @@ export default function RegionsView({ regions }) {
     <ol>
       {regions.map(({ id, name }) => (
         <li key={id} value={name}>
-          {name}
+          <button type="button">
+            {name}
+          </button>
         </li>
       ))}
     </ol>
