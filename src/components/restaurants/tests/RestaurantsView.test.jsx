@@ -33,6 +33,5 @@ describe('RestaurantsView', () => {
     const result = getAllByRole('listitem');
     expect(result).toHaveLength(1);
     expect(getByText(expectName)).toBeDefined();
-    expect(getByText(expectAddress)).toBeDefined();
   });
 });
