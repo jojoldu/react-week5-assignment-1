@@ -29,4 +29,17 @@ describe('CategoriesView', () => {
     expect(getByText(expectName1)).toBeDefined();
     expect(getByText(expectName2)).toBeDefined();
   });
+
+  it('target과 동일할 경우 카테고리(V)로 노출된다', () => {
+    const expectName = '한식';
+    const target = 1;
+    const regions = [
+      { id: target, name: expectName },
+    ];
+
+    const { getByRole } = renderTestComponent(regions, target);
+
+    const result = getByRole('button');
+    expect(result).toHaveTextContent(`${expectName}(V)`);
+  });
 });
