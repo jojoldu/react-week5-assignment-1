@@ -16,5 +16,12 @@ export default function reducer(state = initState, action) {
     };
   }
 
+  if (type === ActionType.FETCH_CATEGORIES) {
+    return {
+      ...state,
+      categories: payload.categories,
+    };
+  }
+
   return state;
 }

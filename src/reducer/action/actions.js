@@ -22,5 +22,7 @@ export function fetchRegions() {
 }
 
 export function getFetchCategoriesAction(categories) {
-  return null;
+  return toActionObject(ActionType.FETCH_CATEGORIES, {
+    categories,
+  });
 }

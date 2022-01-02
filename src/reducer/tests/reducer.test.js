@@ -29,8 +29,8 @@ describe('reducer', () => {
         { id: 1, name: expectName },
       ]));
 
-      expect(state.regions).toHaveLength(1);
-      expect(state.regions[0].name).toBe(expectName);
+      expect(state.categories).toHaveLength(1);
+      expect(state.categories[0].name).toBe(expectName);
     });
   });
 });
