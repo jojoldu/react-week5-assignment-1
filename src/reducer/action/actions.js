@@ -1,6 +1,6 @@
 import toActionObject from './toActionObject';
 import ActionType from './ActionType';
-import { getRegions } from '../../api/Api';
+import { getCategories, getRegions } from '../../api/Api';
 
 /**
  *
@@ -25,4 +25,16 @@ export function getFetchCategoriesAction(categories) {
   return toActionObject(ActionType.FETCH_CATEGORIES, {
     categories,
   });
+}
+
+export function fetchCategories() {
+  return async (dispatch) => {
+    const regions = await getCategories();
+
+    dispatch(getFetchRegionsAction(regions));
+  };
+}
+
+export function getFetchRestaurantsAction(restaurants) {
+  return null;
 }
