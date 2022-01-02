@@ -20,3 +20,7 @@ export function fetchRegions() {
     dispatch(getFetchRegionsAction(regions));
   };
 }
+
+export function getFetchCategoriesAction(categories) {
+  return null;
+}
