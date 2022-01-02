@@ -19,3 +19,12 @@ export function getRegions() {
 export function getCategories() {
   return request('/categories');
 }
+
+/**
+ * @param regionName {string}
+ * @param categoryId {number}
+ * @returns {Promise<[]>}
+ */
+export function getRestaurants(regionName, categoryId) {
+  return request(`/restaurants?region=${regionName}&category=${categoryId}`);
+}
