@@ -7,9 +7,11 @@ describe('CategoriesView', () => {
     jest.clearAllMocks();
   });
 
-  function renderTestComponent() {
+  function renderTestComponent(categories) {
     return render((
-      <CategoriesView />
+      <CategoriesView
+        categories={categories}
+      />
     ));
   }
 
