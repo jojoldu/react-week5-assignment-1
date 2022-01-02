@@ -7,10 +7,11 @@ describe('CategoriesView', () => {
     jest.clearAllMocks();
   });
 
-  function renderTestComponent(categories) {
+  function renderTestComponent(categories, target) {
     return render((
       <CategoriesView
         categories={categories}
+        target={target}
       />
     ));
   }
@@ -33,11 +34,11 @@ describe('CategoriesView', () => {
   it('target과 동일할 경우 category(V)로 노출된다', () => {
     const expectName = '한식';
     const target = 1;
-    const regions = [
+    const categories = [
       { id: target, name: expectName },
     ];
 
-    const { getByRole } = renderTestComponent(regions, target);
+    const { getByRole } = renderTestComponent(categories, target);
 
     const result = getByRole('button');
     expect(result).toHaveTextContent(`${expectName}(V)`);

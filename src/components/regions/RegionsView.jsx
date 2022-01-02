@@ -5,7 +5,7 @@ export default function RegionsView({ regions, target }) {
         <li key={id}>
           <button type="button">
             {name}
-            {target === id ? '(V)' : ''}
+            {target === id && '(V)'}
           </button>
         </li>
       ))}
