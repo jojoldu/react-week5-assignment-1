@@ -23,5 +23,12 @@ export default function reducer(state = initState, action) {
     };
   }
 
+  if (type === ActionType.FETCH_RESTAURANTS) {
+    return {
+      ...state,
+      restaurants: payload.restaurants,
+    };
+  }
+
   return state;
 }

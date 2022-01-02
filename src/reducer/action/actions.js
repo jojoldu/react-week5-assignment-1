@@ -1,6 +1,6 @@
 import toActionObject from './toActionObject';
 import ActionType from './ActionType';
-import { getCategories, getRegions } from '../../api/Api';
+import { getCategories, getRegions, getRestaurants } from '../../api/Api';
 
 /**
  *
@@ -36,5 +36,16 @@ export function fetchCategories() {
 }
 
 export function getFetchRestaurantsAction(restaurants) {
-  return null;
+  return toActionObject(ActionType.FETCH_RESTAURANTS, {
+    restaurants,
+  });
+}
+
+export function fetchRestaurants() {
+  return async (dispatch, getState) => {
+    const { checked } = getState();
+    const restaurants = await getRestaurants(checked.regionName, checked.categoryId);
+
+    dispatch(getFetchRegionsAction(restaurants));
+  };
 }

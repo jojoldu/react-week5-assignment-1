@@ -51,8 +51,8 @@ describe('reducer', () => {
         },
       ]));
 
-      expect(state.categories).toHaveLength(1);
-      expect(state.categories[0].name).toBe(expectName);
+      expect(state.restaurants).toHaveLength(1);
+      expect(state.restaurants[0].name).toBe(expectName);
     });
   });
 });
