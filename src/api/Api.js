@@ -12,7 +12,10 @@ async function request(path) {
   }
 }
 
-// eslint-disable-next-line import/prefer-default-export
 export function getRegions() {
   return request('/regions');
+}
+
+export function getCategories() {
+  return request('/categories');
 }
