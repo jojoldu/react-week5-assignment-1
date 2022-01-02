@@ -30,7 +30,7 @@ describe('CategoriesView', () => {
     expect(getByText(expectName2)).toBeDefined();
   });
 
-  it('target과 동일할 경우 카테고리(V)로 노출된다', () => {
+  it('target과 동일할 경우 category(V)로 노출된다', () => {
     const expectName = '한식';
     const target = 1;
     const regions = [
