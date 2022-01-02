@@ -1,3 +1,12 @@
+import { useSelector } from 'react-redux';
+import CategoriesView from './CategoriesView';
+
 export default function CategoriesContainer() {
-  return null;
+  const categories = useSelector((state) => state.categories);
+
+  return (
+    <CategoriesView
+      categories={categories}
+    />
+  );
 }

@@ -4,9 +4,9 @@ import CategoriesContainer from '../CategoriesContainer';
 
 jest.mock('react-redux');
 
-function mockSelector(regions) {
+function mockSelector(categories) {
   useSelector.mockImplementation((selector) => selector({
-    regions,
+    categories,
   }));
 }
 
