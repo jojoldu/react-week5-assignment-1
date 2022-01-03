@@ -1,7 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { render } from '@testing-library/react';
 import CategoriesContainer from '../CategoriesContainer';
-import RegionsContainer from '../../regions/RegionsContainer';
 
 jest.mock('react-redux');
 
