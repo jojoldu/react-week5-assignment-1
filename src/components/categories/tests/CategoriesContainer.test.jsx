@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { render } from '@testing-library/react';
 import CategoriesContainer from '../CategoriesContainer';
+import RegionsContainer from '../../regions/RegionsContainer';
 
 jest.mock('react-redux');
 
@@ -35,5 +36,11 @@ describe('CategoriesContainer', () => {
     expect(result).toHaveLength(2);
     expect(result[0]).toHaveTextContent(expectName1);
     expect(result[1]).toHaveTextContent(expectName2);
+  });
+
+  it('render 하는 시점에 dispatch가 1회 수행된다', () => {
+    render(<CategoriesContainer />);
+
+    expect(dispatch).toBeCalledTimes(1);
   });
 });
